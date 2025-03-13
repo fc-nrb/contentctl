@@ -140,21 +140,21 @@ class Lookup(SecurityContentObject, abc.ABC):
         # Comprehensively match all kinds of lookups, including inputlookup and outputlookup
         inputLookupsToGet = set(
             re.findall(
-                r"[^\w]inputlookup(?:\s*(?:(?:append|strict|start|max)\s*=\s*(?:true|t|false|f))){0,4}\s+([\w]+)",
+                r"[^\w]inputlookup(?:\s*(?:(?:append|strict|start|max)\s*=\s*(?:true|t|false|f))){0,4}\s+([\w\-]+)",
                 text_field,
                 re.IGNORECASE,
             )
         )
         outputLookupsToGet = set(
             re.findall(
-                r"[^\w]outputlookup(?:\s*(?:(?:append|create_empty|override_if_empty|max|key_field|allow_updates|createinapp|create_context|output_format)\s*=\s*[^\s]*))*\s+([\w]+)",
+                r"[^\w]outputlookup(?:\s*(?:(?:append|create_empty|override_if_empty|max|key_field|allow_updates|createinapp|create_context|output_format)\s*=\s*[^\s]*))*\s+([\w\-]+)",
                 text_field,
                 re.IGNORECASE,
             )
         )
         lookupsToGet = set(
             re.findall(
-                r"[^\w](?:(?<!output)(?<!input))lookup(?:\s*(?:(?:local|update)\s*=\s*(?:true|t|false|f))){0,2}\s+([\w]+)",
+                r"[^\w](?:(?<!output)(?<!input))lookup(?:\s*(?:(?:local|update)\s*=\s*(?:true|t|false|f))){0,2}\s+([\w\-]+)",
                 text_field,
                 re.IGNORECASE,
             )
