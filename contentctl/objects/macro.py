@@ -69,7 +69,7 @@ class Macro(SecurityContentObject):
         text_field = re.sub(r"\`\`\`[\s\S]*?\`\`\`", " ", text_field)
 
         # Find all the macros, which start and end with a '`' character
-        macros_to_get = re.findall(r"`([^\s]+)`", text_field)
+        macros_to_get = re.findall(r"\`([^\`]+)\`", text_field)
         # If macros take arguments, stop at the first argument.  We just want the name of the macro
         macros_to_get = set(
             [
