@@ -146,7 +146,7 @@ class Detection_Abstract(SecurityContentObject):
         # In the future, we will may add support that makes the inclusion of the
         # filter macro optional or automatically generates it for searches that
         # do not have it. For now, continue to require that all searches have a filter macro.
-        FORCE_FILTER_MACRO = True
+        FORCE_FILTER_MACRO = False
         if not FORCE_FILTER_MACRO:
             return value
 
