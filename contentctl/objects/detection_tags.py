@@ -56,6 +56,8 @@ class DetectionTags(BaseModel):
     cve: List[CVE_TYPE] = []
     atomic_guid: List[AtomicTest] = []
 
+    next_steps: Optional[str] = None
+
     # enrichment
     mitre_attack_enrichments: List[MitreAttackEnrichment] = Field(
         [], validate_default=True
