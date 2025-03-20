@@ -30,6 +30,7 @@ from contentctl.objects.enums import (
     Cis18Value,
     KillChainPhase,
     NistCategory,
+    NotableSeverity,
     SecurityContentProductName,
     SecurityDomain,
 )
@@ -57,6 +58,7 @@ class DetectionTags(BaseModel):
     atomic_guid: List[AtomicTest] = []
 
     next_steps: Optional[str] = None
+    severity: Optional[NotableSeverity] = None
 
     # enrichment
     mitre_attack_enrichments: List[MitreAttackEnrichment] = Field(

@@ -69,8 +69,7 @@ action.notable.param.next_steps = {{ detection.tags.next_steps | escapeNewlines(
 {% if detection.rba %}
 action.notable.param.severity = {{ detection.rba.severity }}
 {% else %}
-{# Correlations do not have detection.rba defined, but should get a default severity #}
-action.notable.param.severity = high 
+action.notable.param.severity = {{ detection.tags.severity }} 
 {% endif %}
 {% endif %}
 {% if detection.deployment.alert_action.email %}

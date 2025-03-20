@@ -400,3 +400,11 @@ class RiskSeverity(StrEnum):
     MEDIUM = "medium"
     HIGH = "high"
     CRITICAL = "critical"
+    
+    
+class NotableSeverity(StrEnum):
+    INFORMATIONAL = "informational"
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    CRITICAL = "critical"

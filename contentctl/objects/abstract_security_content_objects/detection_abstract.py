@@ -1082,3 +1082,9 @@ class Detection_Abstract(SecurityContentObject):
                 )
 
         return self
+
+    @model_validator(mode="after")
+    def ensure_severity_exists(self):
+        if self.rba is None and self.tags.severity is None:
+            raise ValueError("Detection does not have a severity defined in its tags")
+        return self
